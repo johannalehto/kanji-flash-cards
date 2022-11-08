@@ -1,10 +1,10 @@
-#Ohjelmistotekniikka syys 2022
+# Ohjelmistotekniikka syys 2022
 
-##Tehtävät
+## Tehtävät
 
-###Viikko 1
+### Viikko 1
 
-
-
+[gitlog.txt](https://github.com/johannalehto/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[komentorivi.txt](https://github.com/johannalehto/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 :unicorn: *Helsingin Yliopisto*
