@@ -9,4 +9,4 @@
 [komentorivi.txt](https://github.com/johannalehto/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 
-:unicorn: *Helsingin Yliopisto, Tietojenkäsittelytieteen osasto*
+:unicorn: *Helsingin Yliopisto, Tietojenkäsittelytieteen osasto 2022*
