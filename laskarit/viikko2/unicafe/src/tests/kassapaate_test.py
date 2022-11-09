@@ -89,6 +89,10 @@ class TestKassapaate(unittest.TestCase):
     def test_edullisesti_kortilla_riittamaton_maksu_epaonnistui(self):
         self.assertEqual(self.kassapaate.syo_edullisesti_kortilla(self.kortti_riittamaton), False)
 
+    def test_edullisesti_kortilla_kassa_ei_muutu(self):
+        self.kassapaate.syo_edullisesti_kortilla(self.kortti_riittaa)
+        self.assertEqual(self.kassapaate.kassassa_rahaa, 100000)
+
 #Maukkaat kortilla
     def test_maukkaasti_kortilla_riittava_maksu_maukkaat_kasvaa(self):
         self.kassapaate.syo_maukkaasti_kortilla(self.kortti_riittaa)
@@ -112,18 +116,20 @@ class TestKassapaate(unittest.TestCase):
     def test_maukkaasti_kortilla_riittamaton_maksu_epaonnistui(self):
         self.assertEqual(self.kassapaate.syo_maukkaasti_kortilla(self.kortti_riittamaton), False)
 
-
-    def test_edullisesti_kortilla_kassa_ei_muutu(self):
-        self.kassapaate.syo_edullisesti_kortilla(self.kortti_riittaa)
-        self.assertEqual(self.kassapaate.kassassa_rahaa, 100000)
-
     def test_maukkaasti_kortilla_kassa_ei_muutu(self):
         self.kassapaate.syo_maukkaasti_kortilla(self.kortti_riittaa)
         self.assertEqual(self.kassapaate.kassassa_rahaa, 100000)
-        
-"""
 
-# Kassassa oleva rahamäärä ei muutu kortilla ostettaessa
-# Kortille rahaa ladattaessa kortin saldo muuttuu ja kassassa oleva rahamäärä kasvaa ladatulla summalla
+#Kortille lataus
 
-"""
+    def test_lataa_rahaa_kortille_kortin_saldo_kasvaa(self):
+        self.kassapaate.lataa_rahaa_kortille(self.kortti_riittaa, 500)
+        self.assertEqual(self.kortti_riittaa.saldo, 1500)
+
+    def test_lataa_rahaa_kortille_kassa_kasvaa(self):
+        self.kassapaate.lataa_rahaa_kortille(self.kortti_riittaa, 500)
+        self.assertEqual(self.kassapaate.kassassa_rahaa, 100500)
+
+    def test_lataa_rahaa_kortille_neg(self):
+        self.assertIsNone(self.kassapaate.lataa_rahaa_kortille(self.kortti_riittaa, -1))
+
