@@ -38,9 +38,36 @@ class TestKassapaate(unittest.TestCase):
         self.kassapaate.syo_edullisesti_kateisella(200)
         self.assertEqual(self.kassapaate.edulliset, 0)
 
-    def test_edullisesti_kateisella_riittamaton_maksu_vaihtoraha_oikein(self):
+    def test_edullisesti_kateisella_riittamaton_maksu_palautus_oikein(self):
         self.kassapaate.syo_edullisesti_kateisella(200)
         self.assertEqual(self.kassapaate.syo_edullisesti_kateisella(200), 200)
+
+
+# Maukkaat
+# Jos maksu riittävä: kassassa oleva rahamäärä kasvaa lounaan hinnalla ja vaihtorahan suuruus on oikea
+    def test_maukkaasti_kateisella_riittava_maksu_kassassa_rahaa(self):
+        self.kassapaate.syo_maukkaasti_kateisella(500)
+        self.assertEqual(self.kassapaate.kassassa_rahaa, 100400)
+
+    def test_maukkaasti_kateisella_riittava_maksu_edulliset_kasvaa(self):
+        self.kassapaate.syo_maukkaasti_kateisella(500)
+        self.assertEqual(self.kassapaate.maukkaat, 1)
+
+    def test_maukkaasti_kateisella_riittava_maksu_vaihtoraha_oikein(self):
+        self.assertEqual(self.kassapaate.syo_maukkaasti_kateisella(500), 100)
+
+# Maksu ei riittävä
+    def test_maukkaasti_kateisella_riittamaton_maksu_kassassa_rahaa(self):
+        self.kassapaate.syo_maukkaasti_kateisella(200)
+        self.assertEqual(self.kassapaate.kassassa_rahaa, 100000)
+
+    def test_maukkaasti_kateisella_riittamaton_maksu_edulliset_ei_kasva(self):
+        self.kassapaate.syo_maukkaasti_kateisella(200)
+        self.assertEqual(self.kassapaate.maukkaat, 0)
+
+    def test_maukkaasti_kateisella_riittamaton_maksu_palautus_oikein(self):
+        self.kassapaate.syo_maukkaasti_kateisella(200)
+        self.assertEqual(self.kassapaate.syo_maukkaasti_kateisella(200), 200)
 
 """
 
