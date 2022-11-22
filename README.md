@@ -9,5 +9,3 @@
 * [Työaikakirjanpito](https://github.com/johannalehto/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 
-_______
-:unicorn: *Helsingin Yliopisto, Tietojenkäsittelytieteen osasto 2022*
