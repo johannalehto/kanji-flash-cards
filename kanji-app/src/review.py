@@ -3,18 +3,23 @@ class Review:
         self.kanjiset = kanjiset
         self.session_points = 0
 
+    def check_meaning(self, user_answer, card_answer):
 
-    def place_cards(self):
+        if user_answer == card_answer:
+            self.session_points += 1
+            return f'Correct!'
+        else:
+            return f'Wrong. The right answer is:  {card_answer}'
+
+
+    def check_cards(self):
         for card in self.kanjiset:
             print("-----------------------------------")
             print("")
             print(f'KANJI: {card["kanji"]}')
-            answer = input("MEANING: ")
-            if answer == card["english"]:
-                print(f'Correct!')
-                self.session_points += 1
-            else:
-                print(f'Wrong. The right answer is:  {card["english"]}')
+            user_answer = input("MEANING: ").lower()
+            self.check_meaning(user_answer, card["english"])
+
             command = input("")
             if command== "":
                 continue
@@ -37,7 +42,7 @@ class Review:
         print("Showing a set of 5 kanji")
         print("Write the meaning in English and press enter to move on to a next card")
 
-        self.place_cards()
+        self.check_cards()
 
         print("-----------------------------------")
         print("")
