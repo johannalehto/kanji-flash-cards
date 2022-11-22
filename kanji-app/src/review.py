@@ -17,7 +17,7 @@ class Review:
             print("")
             print(f'KANJI: {card["kanji"]}')
             user_answer = input("MEANING: ").lower()
-            self.check_meaning(user_answer, card["english"])
+            print(self.check_meaning(user_answer, card["english"]))
 
             command = input("")
             if command== "":
