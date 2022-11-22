@@ -2,12 +2,12 @@
 
 ## Documentation
 
-[Software specification](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/software_specification.md)
+* [Software specification](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/software_specification.md)
 
-[Changelog](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/changelog.md)
+* [Changelog](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/changelog.md)
 
-[tyoaikakirjanpito](https://github.com/johannalehto/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+* [Työaikakirjanpito](https://github.com/johannalehto/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 
-
+_______
 :unicorn: *Helsingin Yliopisto, Tietojenkäsittelytieteen osasto 2022*
