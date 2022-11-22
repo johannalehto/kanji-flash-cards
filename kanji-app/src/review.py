@@ -4,7 +4,6 @@ class Review:
         self.session_points = 0
 
     def check_meaning(self, user_answer, card_answer):
-
         if user_answer == card_answer:
             self.session_points += 1
             return f'Correct!'
@@ -24,8 +23,10 @@ class Review:
             if command== "":
                 continue
     
+
     def show_points(self):
         print(f'You got {self.session_points} / {len(self.kanjiset)} correct')
+
 
     def return_to_main_menu(self):
         print("")
