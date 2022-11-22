@@ -2,3 +2,8 @@
 __pycache__
 .coverage
 htmlcov
+
+.vscode
+.DS_Store
+*.py[cod]
+*$py.class

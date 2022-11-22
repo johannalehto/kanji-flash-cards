@@ -1,19 +1,13 @@
 # Ohjelmistotekniikka syys 2022
 
-## Tehtävät
+## Documentation
 
-### Viikko 1
+[Software specification](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/software_specification.md)
 
-[gitlog.txt](https://github.com/johannalehto/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[Changelog]((https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/changelog.md))
 
-[komentorivi.txt](https://github.com/johannalehto/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+[tyoaikakirjanpito](https://github.com/johannalehto/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
-
-### Viikko 2
-
-[vaatimusmaarittely.md](https://github.com/johannalehto/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
-
-[tyoaikakirjanpito.md](https://github.com/johannalehto/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 
 :unicorn: *Helsingin Yliopisto, Tietojenkäsittelytieteen osasto 2022*
