@@ -23,3 +23,9 @@ class TestReview(unittest.TestCase):
         user_answer = "mountain"
         correct_answer = self.kanjiset.check_meaning(user_answer, card_answer)
         self.assertEqual(correct_answer, "Correct!")
+
+    def test_check_cards_check_meaning_wrong_answer(self):
+        card_answer = "mountain"
+        user_answer = "fire"
+        correct_answer = self.kanjiset.check_meaning(user_answer, card_answer)
+        self.assertEqual(correct_answer, "Wrong. The right answer is:  mountain")
