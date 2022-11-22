@@ -4,7 +4,7 @@
 
 [Software specification](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/software_specification.md)
 
-[Changelog]((https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/changelog.md))
+[Changelog](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/changelog.md)
 
 [tyoaikakirjanpito](https://github.com/johannalehto/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
