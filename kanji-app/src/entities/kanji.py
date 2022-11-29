@@ -1,5 +1,6 @@
 class Kanji:
     def __init__(self):
+        self._id = 1
         self._character = "山"
         self._english = "mountain"
         self._onyomi = ("さん", "サン", "san")

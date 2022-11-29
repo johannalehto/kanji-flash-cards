@@ -8,6 +8,7 @@ class UI:
     def __init__(self, kanjiset):
         self.io = Io()
         self.kanjiset = kanjiset
+
         self.learn_set = Learn(kanjiset)
         self.review_set = Review(kanjiset)
 
@@ -19,20 +20,22 @@ class UI:
             if command == "q":
                 break
             if command == "1":
-                self.learn()
+                self.display_learn()
             if command == "2":
-                self.review()
+                self.display_review()
 
-    def learn(self):
+    def display_learn(self):
+
         self.learn_set.display_cards()
 
-    def review(self):
+    def display_review(self):
         self.review_set.review_cards()
+
 
     def title(self):
         self.io.write("")
         self.io.write("")
-        self.io.write("###########################################")
+        self.io.write(f"{40 * '-'}")
         self.io.write("")
         self.io.write("KANJI FLASH CARDS")
         self.io.write("")
