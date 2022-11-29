@@ -2,17 +2,23 @@ from ui.io import Io
 from ui.learn_view import LearnView
 from ui.review_view import ReviewView
 
+from services.kanji_service import KanjiService
+from entities.pile import Pile
+
 
 
 class UI:
     def __init__(self, kanjiset):
         self.io = Io()
-        self.kanjiset = kanjiset
+        self.list = kanjiset
+        self.service = KanjiService()
+        self.learn = LearnView
+        self.new_pile = None
 
-        self.learn_set = Learn(kanjiset)
-        self.review_set = Review(kanjiset)
 
-    def start(self):
+    def run(self):
+        self.new_pile = self.service.create_pile_from_list(self.list)
+
         self.title()
         while True:
             self.instructions()
@@ -22,11 +28,13 @@ class UI:
             if command == "1":
                 self.display_learn()
             if command == "2":
-                self.display_review()
+                self.io.write("Under maintenance")
+                # self.display_review()
+
 
     def display_learn(self):
+        self.learn.display_cards(self.new_pile)
 
-        self.learn_set.display_cards()
 
     def display_review(self):
         self.review_set.review_cards()

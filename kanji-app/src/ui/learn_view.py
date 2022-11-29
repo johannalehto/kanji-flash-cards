@@ -1,13 +1,14 @@
 from ui.io import Io
 from entities.card import Card
+from entities.pile import Pile
 
 class LearnView:
-    def __init__(self, kanjiset):
-        self.pile = []
+    def __init__(self, pile: Pile):
+        self.pile = pile
         self.io = Io()
 
     def display_cards(self):
-        self.print_title()
+   #     self.print_title()
 
         for card in self.pile:
             self.io.write(str(card))
@@ -19,15 +20,16 @@ class LearnView:
                 continue
         self.print_ending()
 
-
-    def print_title(self):
+    @classmethod
+    def print_title(cls):
         print("")
         print("###########################################")
         print("")
         print("Showing a set of 5 kanji")
         print("Press enter to see the meaning and move on to a next card")
 
-    def print_ending(self):
+    @classmethod
+    def print_ending(cls):
         print("-------------------------------------")
         print("End of the set")
 

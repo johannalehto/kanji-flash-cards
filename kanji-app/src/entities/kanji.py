@@ -1,10 +1,10 @@
 class Kanji:
-    def __init__(self):
-        self._id = 1
-        self._character = "山"
-        self._english = "mountain"
-        self._onyomi = ("さん", "サン", "san")
-        self._kunyomi = ("やま", "ヤマ", "yama")
+    def __init__(self, character: str, english: str, onyomi: tuple, kunyomi: tuple):
+        # self._id = 1
+        self._character = character
+        self._english = english
+        self._onyomi = onyomi
+        self._kunyomi = kunyomi
 
     @property
     def character(self):
