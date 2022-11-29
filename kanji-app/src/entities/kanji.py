@@ -27,8 +27,8 @@ class Kanji:
         return self._onyomi
 
     @onyomi.setter
-    def onyomi(self, on: tuple):
-        self._onyomi = on
+    def onyomi(self, ony: tuple):
+        self._onyomi = ony
 
     @property
     def kunyomi(self):
@@ -37,6 +37,3 @@ class Kanji:
     @onyomi.setter
     def kunyomi(self, kun: tuple):
         self._kunyomi = kun
-
-    
-

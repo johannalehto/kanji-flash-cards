@@ -1,6 +1,7 @@
 from entities.kanji import Kanji
 
-class Card: 
+
+class Card:
     def __init__(self, kanji):
         self._kanji = Kanji()
         # self._correct_level_1 = False
@@ -11,5 +12,4 @@ class Card:
         return self._kanji.english
 
     def __str__(self):
-        print(f'{40 * "-"} \n KANJI: {self._kanji._character} \n {40 * "-"}')
-
+        return f'{40 * "-"} \n KANJI: {self._kanji._character} \n {40 * "-"}'
