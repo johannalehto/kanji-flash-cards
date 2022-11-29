@@ -1,4 +1,6 @@
-# Ohjelmistotekniikka syys 2022
+#### Ohjelmistotekniikka syys 2022
+
+# Kanji Flash Card App
 
 ## Documentation
 
@@ -6,8 +8,6 @@
 
 * [Changelog](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/changelog.md)
 
-* [Työaikakirjanpito](https://github.com/johannalehto/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+* [Työaikakirjanpito](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/tyoaikakirjanpito.md)
 
 
-_______
-:unicorn: *Helsingin Yliopisto, Tietojenkäsittelytieteen osasto 2022*
