@@ -5,5 +5,5 @@
 | 15.11. | 2    | vaatimusmäärittely, käyttöliittymäluonnos |
 | 22.11. | 6    | ohjelman runko, luokkien suunnittelu, ensimmäiset testit |
 | 28.11. | 2    | koodin refaktorointi pakkausmallin mukaiseksi, io lisäys|
-| 29.11. | 8    | koodin refaktorointi pakkausmallin mukaiseksi, sovelluslogiikan suunnittelua ja rakennusta|
-| yht   | 18  | | 
+| 29.11. | 9    | koodin refaktorointi pakkausmallin mukaiseksi, sovelluslogiikan suunnittelua ja rakennusta|
+| yht   | 19  | | 
