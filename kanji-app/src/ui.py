@@ -1,6 +1,7 @@
 from learn import Learn
 from review import Review
 
+
 class UI:
     def __init__(self, kanjiset):
         self.kanjiset = kanjiset
@@ -21,9 +22,9 @@ class UI:
 
             if command == "q":
                 break
-            elif command == "1":
+            if command == "1":
                 self.learn()
-            elif command == "2":
+            if command == "2":
                 self.review()
 
     def learn(self):
@@ -31,7 +32,7 @@ class UI:
 
     def review(self):
         self.review_set.review_cards()
-        
+
     def instructions(self):
         print("-----------MAIN MENU:--------------")
         print("Press")
@@ -39,5 +40,3 @@ class UI:
         print("2 - Review a set of kanji")
         print("Q - Quit")
         print("-----------------------------------")
-
-

@@ -6,10 +6,8 @@ class Review:
     def check_meaning(self, user_answer, card_answer):
         if user_answer == card_answer:
             self.session_points += 1
-            return f'Correct!'
-        else:
-            return f'Wrong. The right answer is:  {card_answer}'
-
+            return 'Correct!'
+        return f'Wrong. The right answer is:  {card_answer}'
 
     def check_cards(self):
         for card in self.kanjiset:
@@ -20,13 +18,11 @@ class Review:
             print(self.check_meaning(user_answer, card["english"]))
 
             command = input("")
-            if command== "":
+            if command == "":
                 continue
-    
 
     def show_points(self):
         print(f'You got {self.session_points} / {len(self.kanjiset)} correct')
-
 
     def return_to_main_menu(self):
         print("")
@@ -34,7 +30,6 @@ class Review:
         print("")
         if command == "":
             return
-
 
     def review_cards(self):
         print("")
@@ -52,5 +47,3 @@ class Review:
         self.show_points()
 
         self.return_to_main_menu()
-
-

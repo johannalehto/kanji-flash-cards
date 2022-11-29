@@ -1,18 +1,20 @@
 import unittest
 from review import Review
 
+
 class KanjisetStub:
     def get_kanjilist(self):
         return [
-        {
-        "kanji": "山",
-        "english": "mountain"
-        },
-        {
-        "kanji": "木",
-        "english": "tree"
-        }
+            {
+                "kanji": "山",
+                "english": "mountain"
+            },
+            {
+                "kanji": "木",
+                "english": "tree"
+            }
         ]
+
 
 class TestReview(unittest.TestCase):
     def setUp(self):
@@ -28,4 +30,5 @@ class TestReview(unittest.TestCase):
         card_answer = "mountain"
         user_answer = "fire"
         correct_answer = self.kanjiset.check_meaning(user_answer, card_answer)
-        self.assertEqual(correct_answer, "Wrong. The right answer is:  mountain")
+        self.assertEqual(
+            correct_answer, "Wrong. The right answer is:  mountain")
