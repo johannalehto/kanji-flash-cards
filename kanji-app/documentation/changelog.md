@@ -3,7 +3,7 @@
 - Refactured the code to cleaner package structure
 - Added more separate class objects and trying to plan application logic between them
 - UI still in command line, but separated further from the rest of the program
-- 
+- Replace print and input -methods with the new io class
 
 ## Week 3
 
