@@ -1,3 +1,10 @@
+## Week 4
+
+- Refactured the code to cleaner package structure
+- Added more separate class objects and trying to plan application logic between them
+- UI still in command line, but separated further from the rest of the program
+- 
+
 ## Week 3
 
 - Added main structure for the program
