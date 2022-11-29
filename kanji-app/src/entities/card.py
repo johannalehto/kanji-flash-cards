@@ -2,7 +2,7 @@ from entities.kanji import Kanji
 
 
 class Card:
-    def __init__(self, kanji):
+    def __init__(self, kanji: Kanji):
         self.kanji = kanji
         # self._correct_level_1 = False
         # self._correct_level_2 = False
