@@ -1,4 +1,5 @@
-class Review:
+
+class ReviewView:
     def __init__(self, kanjiset):
         self.kanjiset = kanjiset
         self.session_points = 0

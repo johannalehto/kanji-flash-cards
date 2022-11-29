@@ -1,4 +1,6 @@
-class Learn:
+from entities.card import Card
+
+class LearnView:
     def __init__(self, kanjiset):
         self.kanjiset = kanjiset
 
