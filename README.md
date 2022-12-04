@@ -15,7 +15,7 @@
 
 ## Installation
 
-1. Install application dependencies with command:
+Install application dependencies with command:
 
 ```bash
 poetry install
@@ -25,13 +25,13 @@ poetry install
 
 ```bash
 poetry run invoke build
-``` -->
+```
 
-2. Start application with command:
+3. Start application with command:
 
 ```bash
 poetry run invoke start
-```
+``` -->
 
 ## Command line
 
