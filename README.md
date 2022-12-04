@@ -21,13 +21,13 @@
 poetry install
 ```
 
-2. Run initialization with command:
+<!-- 2. Run initialization with command:
 
 ```bash
 poetry run invoke build
-```
+``` -->
 
-3. Start application with command:
+2. Start application with command:
 
 ```bash
 poetry run invoke start
