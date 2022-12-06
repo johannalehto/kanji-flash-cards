@@ -3,8 +3,6 @@ from ui.learn_view import LearnView
 from ui.review_view import ReviewView
 
 from services.kanji_service import KanjiService
-from entities.pile import Pile
-
 
 
 class UI:
@@ -12,17 +10,15 @@ class UI:
         self.io = Io()
         self.list = None
         self.service = KanjiService()
-        self.learn = LearnView
-        self.new_pile = None
+        self.learn = LearnView()
+        self.new_pile = []
 
 
     def run(self):
    
         self.title_main()
         self.title_create_cardset()
-        word_file = self.enter_file()
-        self.service.create_cardset_from_file(word_file)
-
+        self.create_new_pile()
 
         while True:
             self.instructions()
@@ -52,6 +48,14 @@ class UI:
             words_file = "./src/data/default.csv"
         return words_file
 
+    def create_new_pile(self):
+        word_file = self.enter_file()
+        self.new_pile = self.service.create_cardset_from_file(word_file)
+        self.io.write("New card set created!")
+
+
+
+
 
     def title_main(self):
         self.io.write("")
@@ -63,11 +67,8 @@ class UI:
 
     def title_create_cardset(self):
         self.io.write("")
-        self.io.write("Create new card set")
+        self.io.write("--Create a new card set--")
         self.io.write("")
-
-        
-
 
     def instructions(self):
         self.io.write("-----------MAIN MENU:--------------")

@@ -3,12 +3,18 @@ from entities.card import Card
 from entities.pile import Pile
 
 class LearnView:
-    def __init__(self, pile: Pile):
-        self.pile = pile
+    def __init__(self):
         self.io = Io()
+        self.pile = Pile()
+        self.cards_per_round = 5
 
-    def display_cards(self):
-   #     self.print_title()
+
+    
+
+    def display_cards(self, pile):
+        self.set_pile(pile)
+        self.set_cards_per_round()
+        self.print_title()
 
         for card in self.pile:
             self.io.write(str(card))
@@ -21,19 +27,28 @@ class LearnView:
         self.print_ending()
 
 
+    def set_pile(self, pile):
+        self.pile = pile
 
-    @classmethod
-    def print_title(cls):
-        print("")
-        print("###########################################")
-        print("")
-        print("Add .csv -file to create a card set or press ENTER to use default set:")
-        print("Showing a set of 5 kanji")
-        print("Press enter to see the meaning and move on to a next card")
+    def set_cards_per_round(self):
+        self.io.write(f"Your current card set has {len(self.pile)} cards.")
+        # while True:
+        #     new_cards_per_round = self.io.read("How many cards do you want to learn: ")
+        #     if int(new_cards_per_round) < len(self.pile):
+        #         self.io.write("You don't have enough cards. Give a smaller amount.")
+        #     break
+        # self.cards_per_round = int(new_cards_per_round)
+        self.cards_per_round = len(self.pile)
 
-    @classmethod
-    def print_ending(cls):
-        print("-------------------------------------")
-        print("End of the set")
+
+    def print_title(self):
+        self.io.write("")
+        self.io.write(f"Showing a set of {self.cards_per_round} kanji")
+        self.io.write("Press enter to see the meaning and move on to a next card")
+
+
+    def print_ending(self):
+        self.io.write("-------------------------------------")
+        self.io.write("End of the set")
 
 
