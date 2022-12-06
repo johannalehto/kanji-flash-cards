@@ -14,9 +14,9 @@ The application has one user role, which allows the user to log in to the applic
 
 ### Basic features
 - User can choose how many kanji-characters they want to review per session
-- User sees a kanji-character one at a time, and can write the meaning under it
-- User sees the correct answer, and gets feedback whether their answer was correct or not
-- User sees how many kanji-characters they get correct per review session
+- User sees a kanji-character one at a time, and can write the meaning under it ✔️ DONE
+- User sees the correct answer, and gets feedback whether their answer was correct or not ✔️ DONE
+- User sees how many kanji-characters they get correct per review session ✔️ DONE
 - The more often the answer is correct, the less frequently the kanji will show up in the review session
 
 
