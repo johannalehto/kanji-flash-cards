@@ -15,10 +15,7 @@ class KanjiService:
                 self.new_pile.add_kanji(word)
         return self.new_pile.cards()
 
-
     def check_meaning(self, user_answer: str, card):
         if user_answer == card.meaning():
             return True
         return False
-
-

@@ -10,8 +10,6 @@ class CardStub:
     def meaning(self):
         return self.kanji.english
     
-
-
 class TestKanjiService(unittest.TestCase):
     def setUp(self):
         self.service = KanjiService()
