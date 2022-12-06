@@ -8,18 +8,22 @@ from entities.pile import Pile
 
 
 class UI:
-    def __init__(self, kanjiset):
+    def __init__(self):
         self.io = Io()
-        self.list = kanjiset
+        self.list = None
         self.service = KanjiService()
         self.learn = LearnView
         self.new_pile = None
 
 
     def run(self):
-        self.new_pile = self.service.create_pile_from_list(self.list)
+   
+        self.title_main()
+        self.title_create_cardset()
+        word_file = self.enter_file()
+        self.service.create_cardset_from_file(word_file)
 
-        self.title()
+
         while True:
             self.instructions()
             command = self.io.read("Give a command: ")
@@ -39,14 +43,30 @@ class UI:
     def display_review(self):
         self.review_set.review_cards()
 
+    
 
-    def title(self):
+
+    def enter_file(self):
+        words_file = input("Add .csv -file to create a card set or press ENTER to use a default set:")
+        if words_file == "":
+            words_file = "./src/data/default.csv"
+        return words_file
+
+
+    def title_main(self):
         self.io.write("")
         self.io.write("")
         self.io.write(f"{40 * '-'}")
         self.io.write("")
         self.io.write("KANJI FLASH CARDS")
         self.io.write("")
+
+    def title_create_cardset(self):
+        self.io.write("")
+        self.io.write("Create new card set")
+        self.io.write("")
+
+        
 
 
     def instructions(self):

@@ -2,11 +2,12 @@ from entities.kanji import Kanji
 
 
 class Card:
-    def __init__(self, kanji: Kanji):
-        self.kanji = kanji
+    def __init__(self, kanji):
+        self.kanji = Kanji(kanji[0], kanji[1])
         # self._correct_level_1 = False
         # self._correct_level_2 = False
         # self._correct_level_3 = False
+
 
     def meaning(self):
         return self.kanji.english

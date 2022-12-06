@@ -20,11 +20,14 @@ class LearnView:
                 continue
         self.print_ending()
 
+
+
     @classmethod
     def print_title(cls):
         print("")
         print("###########################################")
         print("")
+        print("Add .csv -file to create a card set or press ENTER to use default set:")
         print("Showing a set of 5 kanji")
         print("Press enter to see the meaning and move on to a next card")
 

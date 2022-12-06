@@ -1,11 +1,10 @@
 from ui.ui import UI
 
 
-def main(kanjiset):
-    kanjiapp = UI(kanjiset)
+def main():
+    kanjiapp = UI()
     kanjiapp.run()
 
 
 if __name__ == "__main__":
-    test_set = "src/data/kanji-list.json"
-    main(test_set)
+    main()

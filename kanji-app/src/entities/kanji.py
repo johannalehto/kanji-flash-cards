@@ -1,10 +1,10 @@
 class Kanji:
-    def __init__(self, character: str, english: str, onyomi: tuple, kunyomi: tuple):
+    def __init__(self, character: str, english: str):
         # self._id = 1
         self._character = character
         self._english = english
-        self._onyomi = onyomi
-        self._kunyomi = kunyomi
+        # self._onyomi = onyomi
+        # self._kunyomi = kunyomi
 
     @property
     def character(self):
@@ -22,18 +22,18 @@ class Kanji:
     def english(self, eng: str):
         self._english = eng
 
-    @property
-    def onyomi(self):
-        return self._onyomi
+    # @property
+    # def onyomi(self):
+    #     return self._onyomi
 
-    @onyomi.setter
-    def onyomi(self, ony: tuple):
-        self._onyomi = ony
+    # @onyomi.setter
+    # def onyomi(self, ony: tuple):
+    #     self._onyomi = ony
 
-    @property
-    def kunyomi(self):
-        return self._kunyomi
+    # @property
+    # def kunyomi(self):
+    #     return self._kunyomi
 
-    @onyomi.setter
-    def kunyomi(self, kun: tuple):
-        self._kunyomi = kun
+    # @onyomi.setter
+    # def kunyomi(self, kun: tuple):
+    #     self._kunyomi = kun
