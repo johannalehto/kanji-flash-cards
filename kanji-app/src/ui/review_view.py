@@ -1,8 +1,32 @@
+from ui.io import Io
+from entities.card import Card
+from entities.pile import Pile
 
 class ReviewView:
-    def __init__(self, kanjiset):
-        self.kanjiset = kanjiset
+    def __init__(self):
+        self.io = Io()
+        self.pile = Pile()
+        self.cards_per_round = 5
         self.session_points = 0
+
+    
+    def review_cards(self, pile):
+        self.set_pile(pile)
+        self.set_cards_per_round()
+        self.print_title()
+
+        for card in self.pile:
+            self.io.write(str(card))
+            user_answer = self.io.read("MEANING: ").lower()
+            self.io.write(self.check_meaning(user_answer, card.meaning()))
+            command = self.io.read("")
+            if command == "":
+                continue
+
+        self.print_ending()
+        self.show_points()
+        self.return_to_main_menu()
+
 
     def check_meaning(self, user_answer, card_answer):
         if user_answer == card_answer:
@@ -10,41 +34,37 @@ class ReviewView:
             return 'Correct!'
         return f'Wrong. The right answer is:  {card_answer}'
 
-    def check_cards(self):
-        for card in self.kanjiset:
-            print("-----------------------------------")
-            print("")
-            print(f'KANJI: {card["kanji"]}')
-            user_answer = input("MEANING: ").lower()
-            print(self.check_meaning(user_answer, card["english"]))
-
-            command = input("")
-            if command == "":
-                continue
 
     def show_points(self):
-        print(f'You got {self.session_points} / {len(self.kanjiset)} correct')
+        self.io.write(f'You got {self.session_points} / {len(self.pile)} correct')
 
     def return_to_main_menu(self):
-        print("")
-        command = input("Press enter to return to the main menu")
-        print("")
+        self.io.write("")
+        command = self.io.read("Press enter to return to the main menu")
+        self.io.write("")
         if command == "":
             return
 
-    def review_cards(self):
-        print("")
-        print("###########################################")
-        print("")
-        print("Showing a set of 5 kanji")
-        print("Write the meaning in English and press enter to move on to a next card")
+    def set_pile(self, pile):
+        self.pile = pile
 
-        self.check_cards()
+    def set_cards_per_round(self):
+        self.io.write(f"Your current card set has {len(self.pile)} cards.")
+        # while True:
+        #     new_cards_per_round = self.io.read("How many cards do you want to learn: ")
+        #     if int(new_cards_per_round) < len(self.pile):
+        #         self.io.write("You don't have enough cards. Give a smaller amount.")
+        #     break
+        # self.cards_per_round = int(new_cards_per_round)
+        self.cards_per_round = len(self.pile)
 
-        print("-----------------------------------")
-        print("")
-        print("End of the set")
 
-        self.show_points()
+    def print_title(self):
+        self.io.write("")
+        self.io.write(f"Showing a set of {self.cards_per_round} kanji")
+        self.io.write("Write the meaning in English and press enter to move on to a next card")
 
-        self.return_to_main_menu()
+    def print_ending(self):
+        self.io.write("-------------------------------------")
+        self.io.write("End of the set")
+

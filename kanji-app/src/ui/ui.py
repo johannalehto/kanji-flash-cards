@@ -11,6 +11,7 @@ class UI:
         self.list = None
         self.service = KanjiService()
         self.learn = LearnView()
+        self.review = ReviewView()
         self.new_pile = []
 
 
@@ -28,8 +29,7 @@ class UI:
             if command == "1":
                 self.display_learn()
             if command == "2":
-                self.io.write("Under maintenance")
-                # self.display_review()
+                self.display_review()
 
 
     def display_learn(self):
@@ -37,7 +37,7 @@ class UI:
 
 
     def display_review(self):
-        self.review_set.review_cards()
+        self.review.review_cards(self.new_pile)
 
     
 
