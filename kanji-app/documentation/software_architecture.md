@@ -45,9 +45,25 @@ Coming up.
 
 ## Main Functionalities
 
-### Create Set - Creating a set of cards with a word list
+### Creating a set of cards from a .csv-file
 
-Coming up
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI
+  participant KanjiService
+  participant Pile
+  participant Card
+  participant Kanji
+  User->>UI: Press ENTER to use a default card set
+  UI->>KanjiService: create_new_pile()
+  KanjiService->>Pile: create_cardset_from_file(word_file)
+  Pile->>Card: add_kanji(word)
+  Card->>Kanji: Kanji(word[0], word[1])
+  Kanji-->>Card: Card(kanji)
+  Card-->>Pile: cards.append(Card)
+  Pile-->>KanjiService: new_pile
+```
 
 
 ### Learn View - Browsing through a set of cards
