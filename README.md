@@ -4,6 +4,8 @@
 
 ## Documentation
 
+* [Release Week 5](https://github.com/johannalehto/ot-harjoitustyo/releases/tag/viikko5)
+
 * [Software specification](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/software_specification.md)
 
 * [Software architecture](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/software_architecture.md)
