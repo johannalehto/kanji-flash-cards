@@ -1,5 +1,4 @@
 from ui.io import Io
-from entities.card import Card
 from entities.pile import Pile
 
 class LearnView:
@@ -8,10 +7,7 @@ class LearnView:
         self.pile = Pile()
         self.cards_per_round = 5
 
-
-    
-
-    def display_cards(self, pile):
+    def display_learn_pile(self, pile):
         self.set_pile(pile)
         self.set_cards_per_round()
         self.print_title()
@@ -42,10 +38,16 @@ class LearnView:
 
 
     def print_title(self):
-        self.io.write("")
         self.io.write(f"Showing a set of {self.cards_per_round} kanji")
+        self.io.write("")
+        self.io.write("INSTRUCTIONS:")
         self.io.write("Press enter to see the meaning and move on to a next card")
-
+        self.io.write("")
+        self.io.write("")
+        command = self.io.read("> Press ENTER to start")
+        self.io.write("")
+        if command == "":
+            return
 
     def print_ending(self):
         self.io.write("-------------------------------------")

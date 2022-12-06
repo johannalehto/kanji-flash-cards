@@ -27,23 +27,14 @@ class UI:
             if command == "q":
                 break
             if command == "1":
-                self.display_learn()
+                self.learn.display_learn_pile(self.new_pile)
             if command == "2":
-                self.display_review()
-
-
-    def display_learn(self):
-        self.learn.display_cards(self.new_pile)
-
-
-    def display_review(self):
-        self.review.review_cards(self.new_pile)
-
-    
+                self.review.display_review_pile(self.new_pile)
 
 
     def enter_file(self):
-        words_file = input("Add .csv -file to create a card set or press ENTER to use a default set:")
+       # words_file = input("Add .csv -file to create a card set or press ENTER to use a default set:")
+        words_file = self.io.read("> Press ENTER to use a default card set \n")
         if words_file == "":
             words_file = "./src/data/default.csv"
         return words_file
@@ -51,11 +42,9 @@ class UI:
     def create_new_pile(self):
         word_file = self.enter_file()
         self.new_pile = self.service.create_cardset_from_file(word_file)
-        self.io.write("New card set created!")
-
-
-
-
+        self.io.write("")
+        self.io.write("")
+        self.io.write("* New card set created! *")
 
     def title_main(self):
         self.io.write("")
@@ -71,6 +60,8 @@ class UI:
         self.io.write("")
 
     def instructions(self):
+        self.io.write("")
+        self.io.write("")
         self.io.write("-----------MAIN MENU:--------------")
         self.io.write("Press")
         self.io.write("1 - Learn a set of kanji")
