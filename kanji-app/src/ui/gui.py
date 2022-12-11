@@ -1,30 +1,61 @@
 from tkinter import *
+from ui.menu_gui import MenuGUI
+from ui.review_gui import ReviewGUI
 
-BACKGROUND_COLOR = "#fff"
 
 class GUI:
     def __init__(self, root):
+        """Class constructor. Creates a class for the UI.
+
+        Args:
+            root:
+                TKinter-element where the UI is initialized.
+            current_view:
+                TKinter-element for currently displayed view.
+
+        """
         self._root = root
+        self._current_view = None
 
-    def start(self):        
-        canvas = Canvas(self._root, width=800, height=400)
-        canvas.pack()
-        card_character = canvas.create_text(400, 150, text="漢字", font=("Arial", 80, "bold"))
-        card_meaning_title = canvas.create_text(400, 250, text="meaning:", font=("Arial", 24))
+    def start(self):
+        """Starts the UI."""
+       # self._show_menu_view()
+        self._show_review_view()
 
-        card_meaning_entry = Entry(master=self._root, font=("Arial", 24), width=34, fg="#000")
-        entry_window = canvas.create_window(400, 300, window=card_meaning_entry)
+    # def _show_menu_view(self):
+    #     """Displays the main page."""
+    #     self._hide_current_view()
 
-        canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
-        canvas.grid(row=0, column=0, columnspan=2)
+    #     self._current_view = MenuGUI(
+    #         self._root,
+    #     #    self._show_learn_view,
+    #         self._show_review_view,    
+    #     )
+
+    #     self._current_view.pack()
+
+    def _hide_current_view(self):
+        """Destroys the current view before displaying new view."""
+        if self._current_view:
+            self._current_view.destroy()
+
+        self._current_view = None
+
+    def _show_review_view(self):
+        """Displays Review of the cards."""
+        self._hide_current_view()
+
+        self._current_view = ReviewGUI(self._root, self._show_review_view)
+        self._current_view.pack()
 
 
-window = Tk()
-window.title("Kanji Flashcards App")
-window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 
 
-ui = GUI(window)
-ui.start()
 
-window.mainloop()
+
+
+
+
+
+
+
