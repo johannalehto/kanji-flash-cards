@@ -1,8 +1,9 @@
 from ui.ui import UI
+from ui.gui import GUI
 
 
 def main():
-    kanjiapp = UI()
+    kanjiapp = GUI()
     kanjiapp.run()
 
 
