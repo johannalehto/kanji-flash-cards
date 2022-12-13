@@ -11,10 +11,28 @@ class ReviewGUI:
         """Class constructor. Creates a class for the review.
 
         Args:
-            root:
+            _root:
                 TKinter-element where the Review UI is initialized.
-            handle_return:
+            _handle_return:
                 Value called after the end of the set for returning to main menu.
+            _service:
+                For accessing methods from KanjiService-object.
+            _pile:
+                Receives a new set of cards.
+            _canvas:
+                Creates structure for the visual elements.
+
+            _character:
+                Holds character in display.
+
+            _meaning_entry:
+                Holds answer added by the user.
+
+            _card:
+                Holds current card in display.
+            
+
+
         """
 
         self._root = root
@@ -37,9 +55,11 @@ class ReviewGUI:
     #     self._canvas.delete('all')
 
     def _return_handler(self):
+        """"Responsible for returning to the menu view"""
         self._handle_return()
 
     def _handle_answer(self):
+        """"Checks whether answer is correct from the service"""
         answer = self._card_meaning_entry.get()
         if self._service.check_meaning(answer, self._card):
             self._result("Correct")
@@ -54,6 +74,7 @@ class ReviewGUI:
 
 
     def _initialize(self):
+        """"Initializes the card round view"""
         self._canvas = Canvas(self._root, width=800, height=526)
         self._canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
         self._canvas.grid(row=0, column=0, columnspan=2)
