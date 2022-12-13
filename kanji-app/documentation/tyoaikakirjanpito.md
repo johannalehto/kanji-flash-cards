@@ -8,4 +8,6 @@
 | 29.11. | 9    | koodin refaktorointi pakkausmallin mukaiseksi, sovelluslogiikan suunnittelua ja rakennusta |
 | 5.12.  | 2    | sovelluslogiikan piirtäminen paperilla kuntoon |
 | 6.12.  | 8    | luokkaolioiden korjaamista, ui:n metodien erottelua, refaktorointia testien kirjoittamisen mahdollistamiseksi |
-| yht    | 29   | | 
+| 11.12.  | 5    | graafisen käyttöliittymän rakennusta |
+| 12.12.  | 5    | lisää graafisen käyttöliittymän rakennusta, korjailuja, uusia yrityksiä, dokumentaation päivitystä|
+| yht    | 39   | | 
