@@ -1,7 +1,5 @@
 class Kanji:
-    """ Class for a single Kanji
-    """
-
+    """ Class for a single Kanji"""
 
     def __init__(self, character: str, english: str):
         """Class constructor to create a new Kanji entity
