@@ -2,7 +2,7 @@ from entities.kanji import Kanji
 
 
 class Card:
-    """Class constructor to create a new Card which receives a kanji"""
+    """Class for a new Card which receives a kanji"""
 
     def __init__(self, kanji):
         """Class constructor to create a new Card entity
