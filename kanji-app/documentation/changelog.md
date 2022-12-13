@@ -1,3 +1,7 @@
+## Week 6
+- Application is broken again and it doesn't include new functionalities, neither tests
+- I started building the GUI and which rather many views at the same time, and ran into problems which are not yet solved
+
 ## Week 5
 - Application works now with the basic functions
 - Created a method for creating word list from any .csv-file, but in the current demo it is ran directly with default file
