@@ -1,5 +1,16 @@
 class Kanji:
+    """ Class for a single Kanji
+    """
+
+
     def __init__(self, character: str, english: str):
+        """Class constructor to create a new Kanji entity
+        Args:
+            _character (str): Japanese kanji character
+            _english (str): English translation
+            _onyomi (tuple): Japanese readings in hiragana, katakana and romaji
+            _kunyomi (tuple): Japanese readings in hiragana, katakana and romaji
+        """
         # self._id = 1
         self._character = character
         self._english = english
