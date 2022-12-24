@@ -68,15 +68,18 @@ class ReviewGUI:
         self._canvas = Canvas(self._root, width=800, height=526)
         self._canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
         self._canvas.grid(row=0, column=0, columnspan=2)
-  
+    
 
     def _run_cards(self):
 
         self._initialize_card()
 
+        self._display_entry()
+
+
         self._card = self._give_a_card()
         self._canvas.itemconfig(self._character, text=self._card.character(), fill="black")
-        self._meaning_entry.bind('<Return>', self._handle_answer)
+        self._meaning_entry.bind('<Return>', self._display_result)
         # self._meaning_entry.bind('<Return>', self._clear, add="+")  
 
 
@@ -88,20 +91,27 @@ class ReviewGUI:
         return random.choice(self._pile)
         
 
-    def _handle_answer(self, event):
+    def _handle_answer(self):
         """"Checks whether answer is correct from the service"""
         answer = self._meaning_entry.get()
         print(answer)
         if self._service.check_meaning(answer, self._card):
-            self._result("Correct")
-        else:
-            self._result("Wrong")
+            #self._result("Correct")
+            return "Correct"
+        return "Wrong"
+            #self._result("Wrong")
+
 
     def _result(self, result: str):
-        result_title = self._canvas.create_text(
-            400, 350, 
-            text=result, 
-            font=("Arial", 24))
+        # result_title = self._canvas.create_text(
+        #     200, 300, 
+        #     text=result, 
+        #     font=("Arial", 24))
+        if result == "Correct":
+            result_color = "#71E0AB"
+        else:
+            result_color = "#FF7070"
+        self._canvas.itemconfig(self._meaning_entry, state='hidden')
 
     def _handle_next(self):
         self.destroy()
@@ -119,15 +129,33 @@ class ReviewGUI:
             text="meaning:", 
             font=("Arial", 24))
 
+
+    def _display_entry(self):
         self._meaning_entry = Entry(
             self._root,
             font=("Arial", 24), 
-            width=34, 
+            width=24, 
+            justify="center",
             fg="#000")
 
         entry_window = self._canvas.create_window(
             400, 300, 
             window=self._meaning_entry)
+
+
+    def _display_result(self, event):
+        answer = self._meaning_entry.get()
+        result = self._handle_answer()
+
+        self._meaning_entry.destroy()
+        #self._initialize_card()
+
+
+        result_title = self._canvas.create_text(
+            400, 300, 
+            text=answer, 
+            font=("Arial", 24))
+
 
         next_button = Button(
           self._root,
@@ -136,7 +164,7 @@ class ReviewGUI:
         )
 
         button_window = self._canvas.create_window(
-            400, 330, 
+            400, 350, 
             window=next_button)
 
 
