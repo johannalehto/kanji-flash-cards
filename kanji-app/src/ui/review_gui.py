@@ -44,7 +44,6 @@ class ReviewGUI:
         self._canvas = None
         self._character = None
         self._meaning_entry = None
-        self._next_button = None
         self._card = None
 
         self._initialize()
@@ -124,6 +123,8 @@ class ReviewGUI:
             width=24, 
             justify="center",
             fg="#000")
+        
+        self._meaning_entry.focus_set()
 
         entry_window = self._canvas.create_window(
             400, 300, 
@@ -153,6 +154,8 @@ class ReviewGUI:
           text="Next",
           command=self._handle_next
         )
+
+        next_button.bind('<Return>', self._handle_next)
 
         button_window = self._canvas.create_window(
             400, 350, 
