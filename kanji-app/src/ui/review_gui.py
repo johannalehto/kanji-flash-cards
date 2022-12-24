@@ -8,7 +8,7 @@ word_file = "./src/data/default.csv"
 class ReviewGUI:
     """Display for reviewing the cards."""
 
-    def __init__(self, root, handle_return):
+    def __init__(self, root, canvas, handle_return):
         """Class constructor. Creates a class for the review.
 
         Args:
@@ -41,7 +41,7 @@ class ReviewGUI:
         self._service = KanjiService()
         self._pile = self._service.create_cardset_from_file(word_file)
         self._session_set = self._create_session_set(amount=5)
-        self._canvas = None
+        self._canvas = canvas
         self._character = None
         self._meaning_entry = None
         self._card = None

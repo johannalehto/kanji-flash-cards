@@ -2,6 +2,9 @@ from tkinter import *
 from ui.menu_gui import MenuGUI
 from ui.review_gui import ReviewGUI
 
+BACKGROUND_COLOR = "#fff"
+word_file = "./src/data/default.csv"
+
 
 class GUI:
     def __init__(self, root):
@@ -15,12 +18,20 @@ class GUI:
 
         """
         self._root = root
+        self._canvas = None
         self._current_view = None
+
+
+    def _initialize(self):
+        """"Initializes the UI view"""
+        self._canvas = Canvas(self._root, width=800, height=526)
+        self._canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
+        self._canvas.grid(row=0, column=0, columnspan=2)
 
     def start(self):
         """Starts the UI."""
        # self._show_menu_view()
-        self._show_review_view()
+        self._show_review_view(self._canvas)
 
     # def _show_menu_view(self):
     #     """Displays the main page."""
