@@ -6,7 +6,7 @@ class KanjiService:
     """ Application logic """
 
     def __init__(self):
-        """Class constructor. Creates a class for the review.
+        """Class constructor. Creates a class for the application logic.
 
         Args:
             _new_pile:
