@@ -6,14 +6,9 @@ class Kanji:
         Args:
             _character (str): Japanese kanji character
             _english (str): English translation
-            _onyomi (tuple): Japanese readings in hiragana, katakana and romaji
-            _kunyomi (tuple): Japanese readings in hiragana, katakana and romaji
         """
-        # self._id = 1
         self._character = character
         self._english = english
-        # self._onyomi = onyomi
-        # self._kunyomi = kunyomi
 
     @property
     def character(self):
@@ -31,18 +26,3 @@ class Kanji:
     def english(self, eng: str):
         self._english = eng
 
-    # @property
-    # def onyomi(self):
-    #     return self._onyomi
-
-    # @onyomi.setter
-    # def onyomi(self, ony: tuple):
-    #     self._onyomi = ony
-
-    # @property
-    # def kunyomi(self):
-    #     return self._kunyomi
-
-    # @onyomi.setter
-    # def kunyomi(self, kun: tuple):
-    #     self._kunyomi = kun
