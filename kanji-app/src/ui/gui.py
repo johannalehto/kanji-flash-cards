@@ -1,7 +1,7 @@
 from tkinter import *
 from ui.menu_gui import MenuGUI
 from ui.review_gui import ReviewGUI
-from ui.learn_gui import LearnGUI 
+from ui.learn_gui import LearnGUI
 
 
 class GUI:
@@ -21,7 +21,6 @@ class GUI:
         self._current_view = None
         self._wordfile = word_file
 
-
     def start(self):
         """Starts the UI."""
         self._show_menu_view()
@@ -33,7 +32,7 @@ class GUI:
         self._current_view = MenuGUI(
             self._root,
             self._show_learn_view,
-            self._show_review_view,    
+            self._show_review_view,
         )
 
     def _show_learn_view(self):
@@ -41,7 +40,7 @@ class GUI:
         self._hide_current_view()
 
         self._current_view = LearnGUI(
-            self._root, 
+            self._root,
             self._wordfile,
             self._show_menu_view)
 
@@ -50,10 +49,10 @@ class GUI:
         self._hide_current_view()
 
         self._current_view = ReviewGUI(
-            self._root, 
+            self._root,
             self._wordfile,
             self._show_menu_view,
-            )
+        )
 
     def _hide_current_view(self):
         """Destroys the current view before displaying new view."""
@@ -61,16 +60,3 @@ class GUI:
             self._current_view.destroy()
 
         self._current_view = None
-
-
-
-
-
-
-
-
-
-
-
-
-
