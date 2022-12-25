@@ -6,7 +6,7 @@ The program has been tested by unit and integration tests, and by manual system-
 
 ### Application logic
 
-The `KanjiService` class responsible of to the application logic is tested with the [TestKanjiService](https://github.com/johannalehto/ot-harjoitustyo/blob/main/kanji-app/src/tests/kanji_service_test.py) test class. The KanjiService-object utilizes injected dependencies, and for the test a stub class `CardStub` was created to provide mock entities for the service class.
+The `KanjiService` class responsible of the application logic is tested with the [TestKanjiService](https://github.com/johannalehto/ot-harjoitustyo/blob/main/kanji-app/src/tests/services/kanji_service_test.py) test class. The KanjiService-object utilizes injected dependencies, and for the test a stub class `CardStub` was created to provide mock object for the service class.
 
 ### Entities
 
@@ -27,7 +27,7 @@ System testing of the application has been performed manually.
 
 ### Functionalities
 
-All the functionalities listed in the [software specification](./software_specification.md) and in the [user manual](./user_manual.md) have been tested. 
+The main functionalities listed in the [software specification](./software_specification.md) and in the [user manual](./user_manual.md) have been tested. 
 
 ## Quality issues remaining in the application
 
