@@ -2,11 +2,10 @@
 
 # Kanji Flash Card App
 
-_Please use Release week 5, latest version in repository not working_
 
 ## Documentation
 
-* [Release Week 5](https://github.com/johannalehto/ot-harjoitustyo/releases/tag/viikko5)
+* [Release for the course deadline](https://github.com/johannalehto/ot-harjoitustyo/releases/tag/deadline)
 
 * [User manual](https://github.com/johannalehto/ot-harjoitustyo/blob/main/kanji-app/documentation/user_manual.md)
 
