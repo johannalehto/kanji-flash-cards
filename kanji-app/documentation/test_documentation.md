@@ -1,4 +1,4 @@
-# Test document
+# Test documentation
 
 The program has been tested by unit and integration tests, and by manual system-level tests.
 
@@ -17,7 +17,7 @@ The classes responsible of holding the different entities are tested separately.
 
 The application has a branch coverage of 95%, excluding the user interface layer.
 
-![](./images/test-coverage.png)
+![](./img/test-coverage.png)
 
 
 ## System testing
