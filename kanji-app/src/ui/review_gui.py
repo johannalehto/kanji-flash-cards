@@ -1,5 +1,6 @@
 from tkinter import *
 from services.kanji_service import KanjiService
+from entities.session import Session
 import random
 
 
@@ -20,6 +21,8 @@ class ReviewGUI:
                 Receives a new set of cards.
             _session_set:
                 Creates a set of desired amount for the round.
+            _session:
+                Creates an object for keeping up the points.
             _canvas:
                 Creates structure for the visual elements.
            _handle_return:
@@ -36,7 +39,9 @@ class ReviewGUI:
         self._kanji_service = KanjiService()
         self._bg_color = "#fff"
         self._pile = self._kanji_service.create_cardset_from_file(word_file)
-        self._session_set = self._create_session_set(amount=5)
+        self._amount = 5
+        self._session_set = self._create_session_set(self._amount)
+        self._session = Session()
         self._canvas = None
         self._handle_return = handle_return
         self._character = None
@@ -82,6 +87,7 @@ class ReviewGUI:
         """"Checks whether answer is correct from the service"""
         answer = self._meaning_entry.get()
         if self._kanji_service.check_meaning(answer, self._card):
+            self._session.add_point()
             return "Correct"
         return "Wrong"
 
@@ -166,8 +172,8 @@ class ReviewGUI:
             font=("Arial", 24))
 
         results_title = self._canvas.create_text(
-            400, 350,
-            text=f"points: / ",
+            400, 300,
+            text=f"You got {self._session.session_points()} / {self._amount} correct",
             font=("Arial", 24))
 
         return_button = Button(
