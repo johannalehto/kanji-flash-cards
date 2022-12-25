@@ -1,4 +1,5 @@
 from tkinter import *
+from services.ui_service import UIService
 from services.kanji_service import KanjiService
 import random
 
@@ -8,7 +9,7 @@ word_file = "./src/data/default.csv"
 class ReviewGUI:
     """Display for reviewing the cards."""
 
-    def __init__(self, root, canvas, handle_return):
+    def __init__(self, root, handle_return):
         """Class constructor. Creates a class for the review.
 
         Args:
@@ -37,16 +38,17 @@ class ReviewGUI:
         """
 
         self._root = root
-        self._handle_return = handle_return
+        self._ui_service = UIService()
         self._service = KanjiService()
         self._pile = self._service.create_cardset_from_file(word_file)
         self._session_set = self._create_session_set(amount=5)
-        self._canvas = canvas
+        self._canvas = self._ui_service.initialize_canvas(self._root)
+        self._handle_return = handle_return
         self._character = None
         self._meaning_entry = None
         self._card = None
 
-        self._initialize()
+      
         self._run_cards()
 
     def pack(self):
@@ -62,11 +64,11 @@ class ReviewGUI:
         self._handle_return()
 
 
-    def _initialize(self):
-        """"Initializes the card round view"""
-        self._canvas = Canvas(self._root, width=800, height=526)
-        self._canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
-        self._canvas.grid(row=0, column=0, columnspan=2)
+    # def _initialize(self):
+    #     """"Initializes the card round view"""
+    #     self._canvas = Canvas(self._root, width=800, height=526)
+    #     self._canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
+    #     self._canvas.grid(row=0, column=0, columnspan=2)
     
 
     def _run_cards(self):
@@ -155,7 +157,7 @@ class ReviewGUI:
           command=self._handle_next
         )
 
-        next_button.bind('<Return>', self._handle_next)
+        #next_button.bind('<Return>', self._handle_next)
 
         button_window = self._canvas.create_window(
             400, 350, 
@@ -177,7 +179,7 @@ class ReviewGUI:
         return_button = Button(
           self._root,
           text="Return to menu",
-          command=self._return_handler
+          command=self._handle_return
         )
 
         button_window = self._canvas.create_window(
