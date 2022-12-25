@@ -9,14 +9,14 @@ class Card:
         Args:
             _kanji (Kanji()): Kanji object
         """
-        self.kanji = Kanji(kanji[0], kanji[1])
+        self._kanji = Kanji(kanji[0], kanji[1])
 
 
     def meaning(self):
         """Returns the English meaning"""
-        return self.kanji.english
+        return self._kanji.english
 
     def character(self):
         """Returns the Japanese character"""
-        return self.kanji.character
+        return self._kanji.character
 
