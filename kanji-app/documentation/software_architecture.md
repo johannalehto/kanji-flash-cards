@@ -74,13 +74,6 @@ Currently it provides the following:
 * check_meaning(user_anwer, card)
 
 
-## Repositories
-
-Coming up.
-
-## Files 
-
-Coming up. 
 
 ## Main Functionalities
 
