@@ -14,6 +14,8 @@ _Please use Release week 5, latest version in repository not working_
 
 * [Software architecture](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/software_architecture.md)
 
+* [Test documentation](https://github.com/johannalehto/ot-harjoitustyo/blob/main/kanji-app/documentation/test_documentation.md)
+
 * [Changelog](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/changelog.md)
 
 * [Työaikakirjanpito](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/tyoaikakirjanpito.md)
@@ -28,17 +30,6 @@ Install application dependencies with command:
 poetry install
 ```
 
-<!-- 2. Run initialization with command:
-
-```bash
-poetry run invoke build
-```
-
-3. Start application with command:
-
-```bash
-poetry run invoke start
-``` -->
 
 ## Command line
 
