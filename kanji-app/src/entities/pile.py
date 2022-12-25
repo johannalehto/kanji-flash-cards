@@ -14,7 +14,9 @@ class Pile:
 
     def add_kanji(self, new_kanji):
         """Adds new card object to the list"""
-        self._cards.append(Card(new_kanji))
+        character = new_kanji[0]
+        meaning = new_kanji[1]
+        self._cards.append(Card(character, meaning))
 
     def cards(self):
         return self._cards

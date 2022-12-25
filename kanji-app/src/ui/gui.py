@@ -5,18 +5,21 @@ from ui.learn_gui import LearnGUI
 
 
 class GUI:
-    def __init__(self, root):
+    def __init__(self, root, word_file):
         """Class constructor. Creates a class for the UI.
 
         Args:
-            root:
+            _root:
                 TKinter-element where the UI is initialized.
-            current_view:
+            _current_view:
                 TKinter-element for currently displayed view.
+            _word_file:
+                File name for creating the list of words for session.
 
         """
         self._root = root
         self._current_view = None
+        self._wordfile = word_file
 
 
     def start(self):
@@ -39,6 +42,7 @@ class GUI:
 
         self._current_view = LearnGUI(
             self._root, 
+            self._wordfile,
             self._show_menu_view)
 
     def _show_review_view(self):
@@ -47,7 +51,9 @@ class GUI:
 
         self._current_view = ReviewGUI(
             self._root, 
-            self._show_menu_view)
+            self._wordfile,
+            self._show_menu_view,
+            )
 
     def _hide_current_view(self):
         """Destroys the current view before displaying new view."""
