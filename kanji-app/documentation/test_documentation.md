@@ -15,7 +15,7 @@ The classes responsible of holding the different entities are tested separately.
 
 ### Test coverage
 
-The application has a branch coverage of 95%, excluding the user interface layer.
+The application has a branch coverage of 61%, excluding the user interface layer.
 
 ![](./img/test-coverage.png)
 
