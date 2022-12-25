@@ -23,7 +23,7 @@ class MenuGUI:
 
     def _display_menu(self):
         menu_title = self._canvas.create_text(
-            400, 250, 
+            400, 150, 
             text="::KANJI FLASH CARDS::", 
             font=("Arial", 24))
 
@@ -36,7 +36,7 @@ class MenuGUI:
         )
 
         button_window = self._canvas.create_window(
-            400, 350,
+            400, 250,
             window=learn_button)
 
         review_button = Button(
@@ -47,16 +47,9 @@ class MenuGUI:
         )
 
         button_window = self._canvas.create_window(
-            400, 400, 
+            400, 300, 
             window=review_button)
 
-
-
-
-
-    def pack(self):
-        """"Displays the view"""
-        self._canvas.pack()
 
     def destroy(self):
         """"Destroys the view"""

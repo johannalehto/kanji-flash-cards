@@ -39,8 +39,9 @@ class ReviewGUI:
 
         self._root = root
         self._ui_service = UIService()
-        self._service = KanjiService()
-        self._pile = self._service.create_cardset_from_file(word_file)
+        self._kanji_service = KanjiService()
+        self._bg_color = self._ui_service.bg_color
+        self._pile = self._kanji_service.create_cardset_from_file(word_file)
         self._session_set = self._create_session_set(amount=5)
         self._canvas = self._ui_service.initialize_canvas(self._root)
         self._handle_return = handle_return
@@ -48,12 +49,9 @@ class ReviewGUI:
         self._meaning_entry = None
         self._card = None
 
-      
         self._run_cards()
 
-    def pack(self):
-        """"Displays the view"""
-        self._canvas.pack()
+
 
     def destroy(self):
         """"Destroys the view"""
@@ -64,14 +62,8 @@ class ReviewGUI:
         self._handle_return()
 
 
-    # def _initialize(self):
-    #     """"Initializes the card round view"""
-    #     self._canvas = Canvas(self._root, width=800, height=526)
-    #     self._canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
-    #     self._canvas.grid(row=0, column=0, columnspan=2)
-    
-
     def _run_cards(self):
+        """"Displays each card from the set one at a time"""
         try:
             self._card = self._give_a_card()
             self._display_card()
@@ -81,32 +73,37 @@ class ReviewGUI:
             self._display_end()
 
     def _create_session_set(self, amount):
+        """"Creates a set of cards based on desired amount"""
         return random.sample(self._pile, amount)
 
     def _give_a_card(self):
+        """"Returns a card from set and removes it from the set"""
         return self._session_set.pop()
 
     def _handle_answer(self):
         """"Checks whether answer is correct from the service"""
         answer = self._meaning_entry.get()
-        print(answer)
-        if self._service.check_meaning(answer, self._card):
+        if self._kanji_service.check_meaning(answer, self._card):
             return "Correct"
         return "Wrong"
 
 
     def _result_color(self, result: str):
+        """"Returns a color hex according to the result"""
         if result == "Correct":
             return "#71E0AB"
         return "#FF7070"
 
 
     def _handle_next(self):
+        """"Cleans up the card view and calls for a next card"""
         self.destroy()
         self._run_cards()
         
 
     def _display_card(self):
+        """"Responsible for displaying the kanji-character 
+            and the title for meaning"""
         self._character = self._canvas.create_text(
             400, 150, 
             text=self._card.character(),
@@ -119,6 +116,7 @@ class ReviewGUI:
 
 
     def _display_entry(self):
+        """"Responsible for displaying the entry form"""
         self._meaning_entry = Entry(
             self._root,
             font=("Arial", 24), 
@@ -134,6 +132,8 @@ class ReviewGUI:
 
 
     def _display_result(self, event):
+        """"Responsible for displaying the result 
+            after user entry"""
         answer = self._meaning_entry.get()
         result = self._handle_answer()
         color = self._result_color(result)
@@ -154,16 +154,18 @@ class ReviewGUI:
         next_button = Button(
           self._root,
           text="Next",
+          highlightbackground=self._bg_color,
           command=self._handle_next
         )
-
-        #next_button.bind('<Return>', self._handle_next)
 
         button_window = self._canvas.create_window(
             400, 350, 
             window=next_button)
 
     def _display_end(self):
+        """"Responsible for displaying the end page
+            after all cards are run"""
+
         self.destroy()
 
         meaning_title = self._canvas.create_text(
@@ -178,6 +180,7 @@ class ReviewGUI:
         
         return_button = Button(
           self._root,
+          highlightbackground=self._bg_color,
           text="Return to menu",
           command=self._handle_return
         )

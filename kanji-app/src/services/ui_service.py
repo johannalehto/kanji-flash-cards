@@ -1,5 +1,6 @@
 from tkinter import *
 
+
 class UIService:
     """ Common methods for UI """
 
@@ -19,6 +20,3 @@ class UIService:
         self.canvas.config(bg="#fff", highlightthickness=0)
         self.canvas.grid(row=0, column=0, columnspan=2)
         return self.canvas
-
-
-    
