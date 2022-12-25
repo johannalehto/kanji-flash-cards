@@ -1,3 +1,8 @@
+## Week 7
+- GUI is finally ready with basic raw wireframe look 
+- Reviewing a set of card works, gives some visual feedback (color box) based on the answer
+- Further development: connection to database, possibilities for the user to decide how many cards they want to review, see all words of a list at once, add manually words to a set. 
+
 ## Week 6
 - Application is broken again and it doesn't include new functionalities, neither tests
 - I started building the GUI and rather many views at the same time, ran into problems which are not yet solved
