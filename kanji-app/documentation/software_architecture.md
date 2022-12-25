@@ -13,15 +13,11 @@ The 'UI' package contains code for the user interface, including classes for Lea
 
 The interface currently contains the following separate views:
 
+* Main page where user can navigate to learning or reviewing sets of kanji
 * Learning the cards
 * Reviewing the cards
-
-(In addition, it will include also views for:
-
-* Main page where user can navigate to learning, reviewing or loading new sets of kanji
 * Display of the points and status of the learned cards
-* Uploading own sets of kanji
-)
+
 
 Each of these is implemented as a separate class, controlled from the UI class, which is responsible for displaying the views, and it is completely isolated from the application logic. 
 
@@ -98,9 +94,3 @@ sequenceDiagram
 ```
 
 
-
-### Learn View - Browsing through a set of cards
-
-### Review View - Writing meaning to each card on a set
-
-### Learning Status View - How many cards completed, how many on circle
