@@ -5,7 +5,7 @@
 
 ## Documentation
 
-* [Release for the course deadline](https://github.com/johannalehto/ot-harjoitustyo/releases/tag/deadline)
+* [Release for the course deadline](https://github.com/johannalehto/ot-harjoitustyo/releases/tag/course-release)
 
 * [User manual](https://github.com/johannalehto/ot-harjoitustyo/blob/main/kanji-app/documentation/user_manual.md)
 
