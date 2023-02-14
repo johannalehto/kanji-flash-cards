@@ -1,4 +1,5 @@
-#### Ohjelmistotekniikka syys 2022
+#### Course work for the Software Development methods -course in Helsinki University, Fall 2022
+
 
 # Kanji Flash Card App
 
