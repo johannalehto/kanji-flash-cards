@@ -1,4 +1,6 @@
-#### Course work for the Software Development methods -course in Helsinki University, Fall 2022
+*Course work for the Software Development Methods -course,  
+Helsinki University Department of Computer Science, Fall 2022*
+
 
 
 # Kanji Flash Card App
@@ -18,7 +20,7 @@
 
 * [Changelog](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/changelog.md)
 
-* [Työaikakirjanpito](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/tyoaikakirjanpito.md)
+* [Work hours tracking](https://github.com/johannalehto/ot-harjoitustyo/blob/master/kanji-app/documentation/tyoaikakirjanpito.md)
 
 
 ## Installation
